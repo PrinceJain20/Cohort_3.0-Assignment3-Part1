@@ -1,9 +1,4 @@
-/* ==========================================================================
-   Base & Reset Styles
-   ========================================================================== */
-*,
-*::before,
-*::after {
+*{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -17,13 +12,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ==========================================================================
-   Page & Gallery Container (uses display: flex & position: relative)
-   ========================================================================== */
 .page-wrapper {
   display: flex;
   justify-content: center;
@@ -40,7 +30,6 @@ body {
   padding: 42px 64px 28px 64px;
   overflow: hidden;
 
-  /* Rich multi-stop ambient lighting & gradient matching reference */
   background:
     radial-gradient(ellipse 65% 55% at 0% 0%, rgba(95, 10, 68, 0.85) 0%, transparent 70%),
     radial-gradient(ellipse 70% 60% at 50% 55%, rgba(18, 12, 100, 0.95) 0%, transparent 75%),
@@ -50,10 +39,6 @@ body {
   
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 100px rgba(78, 18, 120, 0.15);
 }
-
-/* ==========================================================================
-   Frame Ambient / Registration Dots (uses position: absolute)
-   ========================================================================== */
 .frame-dot {
   position: absolute;
   width: 3.5px;
@@ -92,10 +77,6 @@ body {
   top: 578px;
   right: 12px;
 }
-
-/* ==========================================================================
-   Gallery Header (uses display: flex)
-   ========================================================================== */
 .gallery-header {
   display: flex;
   justify-content: space-between;
@@ -124,9 +105,6 @@ body {
   transform: translateX(2px);
 }
 
-/* ==========================================================================
-   Cards Grid Layout (uses display: flex)
-   ========================================================================== */
 .cards-grid {
   display: flex;
   flex-wrap: wrap;
@@ -134,9 +112,6 @@ body {
   row-gap: 36px;
 }
 
-/* ==========================================================================
-   Art Card (uses display: flex & position: relative)
-   ========================================================================== */
 .art-card {
   display: flex;
   flex-direction: column;
@@ -146,10 +121,8 @@ body {
   padding: 14px 16px 16px;
   border-radius: 22px;
   
-  /* Glassmorphism styling */
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 
@@ -163,8 +136,6 @@ body {
   border-color: rgba(168, 85, 247, 0.45);
   box-shadow: 0 14px 32px rgba(120, 60, 200, 0.25), 0 0 20px rgba(168, 85, 247, 0.15);
 }
-
-/* Card Image Wrapper */
 .card-image-wrap {
   position: relative;
   width: 139px;
@@ -188,8 +159,6 @@ body {
 .art-card:hover .art-image {
   transform: scale(1.04);
 }
-
-/* Card Information Row (uses display: flex) */
 .card-info {
   display: flex;
   justify-content: space-between;
@@ -207,7 +176,6 @@ body {
   white-space: nowrap;
 }
 
-/* Likes Counter & Heart Icon (uses display: flex) */
 .art-likes {
   display: flex;
   align-items: center;
@@ -237,10 +205,6 @@ body {
 .art-likes:hover .like-count {
   color: #ffffff;
 }
-
-/* ==========================================================================
-   Bid Button (uses display: flex & transition effects)
-   ========================================================================== */
 .bid-btn {
   display: flex;
   align-items: center;
@@ -271,30 +235,4 @@ body {
 
 .bid-btn:active {
   transform: scale(0.98);
-}
-
-/* ==========================================================================
-   Responsive Adaptations
-   ========================================================================== */
-@media (max-width: 960px) {
-  .gallery-container {
-    width: 100%;
-    max-width: 720px;
-    padding: 36px 32px 24px;
-  }
-
-  .cards-grid {
-    justify-content: center;
-    gap: 24px;
-  }
-}
-
-@media (max-width: 520px) {
-  .gallery-container {
-    padding: 24px 16px 20px;
-  }
-
-  .cards-grid {
-    gap: 16px;
-  }
 }
